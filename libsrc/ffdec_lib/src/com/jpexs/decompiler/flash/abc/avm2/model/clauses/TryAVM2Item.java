@@ -141,7 +141,11 @@ public class TryAVM2Item extends AVM2Item implements Block {
         appendBlock(null, writer, localData, tryCommands);
         for (int e = 0; e < catchExceptions.size(); e++) {
             writer.newLine();
-            writer.append("catch(");
+            writer.append("catch");
+            if (writer.getFormatting().spaceBeforeParenthesesCatchParentheses) {
+                writer.append(" ");
+            }
+            writer.append("(");
             String localName = catchExceptions.get(e).getVarName(localData.usedDeobfuscations, localData.abc, localData.constantsAvm2, localData.fullyQualifiedNames);
             if (localName.isEmpty()) {
                 localName = finCatchName;
