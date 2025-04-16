@@ -150,6 +150,11 @@ public class CodeFormatting {
     public boolean spaceAroundOperatorsShiftOperator = false;
 
     /**
+     * Space after colon separating declaration name and type.
+     */
+    public boolean spaceAfterColonsDeclarationColon = false;
+
+    /**
      * Space after commas separating parameters in method call.
      */
     public boolean spaceAfterCommasMethodCallParameterComma = false;

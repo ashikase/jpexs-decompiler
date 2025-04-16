@@ -145,6 +145,7 @@ public class TryActionItem extends ActionItem implements Block {
             catchExceptionNames.get(e).toStringNoQuotes(writer, localData);
             if (catchExceptionTypes.get(e) != null) {
                 writer.append(":");
+                writer.spaceAfterDeclarationColon();
                 catchExceptionTypes.get(e).toStringNoQuotes(writer, localData);
             }
             writer.append(")");

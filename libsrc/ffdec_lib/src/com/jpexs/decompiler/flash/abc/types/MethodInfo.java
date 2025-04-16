@@ -364,6 +364,7 @@ public class MethodInfo {
                 writer.hilightSpecial(pdata.localName, HighlightSpecialType.PARAM_NAME, i, pdata);
             }
             writer.appendNoHilight(":");
+            writer.spaceAfterDeclarationColon();
             if (param_types[i] == 0) {
                 writer.hilightSpecial("*", HighlightSpecialType.PARAM, i);
             } else {

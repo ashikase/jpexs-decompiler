@@ -494,6 +494,17 @@ public abstract class GraphTextWriter {
     }
 
     /**
+     * Space after colon separating declaration name and type.
+     * @return GraphTextWriter
+     */
+    public GraphTextWriter spaceAfterDeclarationColon() {
+        if (formatting.spaceAfterColonsDeclarationColon) {
+            space();
+        }
+        return this;
+    }
+
+    /**
      * Adds current method data.
      * @param data Highlight data
      * @return GraphTextWriter

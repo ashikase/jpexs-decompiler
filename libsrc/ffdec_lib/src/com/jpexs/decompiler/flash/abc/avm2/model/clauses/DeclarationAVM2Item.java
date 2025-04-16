@@ -127,6 +127,7 @@ public class DeclarationAVM2Item extends AVM2Item {
             writer.append("var ");
             writer.append(localName);
             writer.append(":");
+            writer.spaceAfterDeclarationColon();
             type.appendTry(writer, localData);
             if (showValue) {
                 writer.append(" = ");
@@ -145,6 +146,7 @@ public class DeclarationAVM2Item extends AVM2Item {
             writer.append("var ");
             ssti.getName(writer, localData);
             writer.append(":");
+            writer.spaceAfterDeclarationColon();
 
             type.appendTry(writer, localData);
             if (showValue) {
@@ -165,6 +167,7 @@ public class DeclarationAVM2Item extends AVM2Item {
             writer.append("var ");
             writer.append(IdentifiersDeobfuscation.printIdentifier(localData.abc.getSwf(), localData.usedDeobfuscations, true, ((FullMultinameAVM2Item) spti.propertyName).resolvedMultinameName));
             writer.append(":");
+            writer.spaceAfterDeclarationColon();
 
             type.appendTry(writer, localData);
             if (showValue) {
@@ -177,6 +180,7 @@ public class DeclarationAVM2Item extends AVM2Item {
         writer.append("var ");
         assignment.toString(writer, localData);
         writer.append(":");
+        writer.spaceAfterDeclarationColon();
 
         type.appendTry(writer, localData);
         return writer;

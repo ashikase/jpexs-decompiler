@@ -131,7 +131,9 @@ public class TraitSlotConst extends Trait implements TraitWithSlot {
             val = new ValueKind(value_index, value_kind);
         }
 
-        typeStr = ":" + typeStr;
+        typeStr = writer.getFormatting().spaceAfterColonsDeclarationColon
+            ? ": " + typeStr
+            : ":" + typeStr;
 
         String slotconst = "var";
         if (kindType == TRAIT_CONST) {
