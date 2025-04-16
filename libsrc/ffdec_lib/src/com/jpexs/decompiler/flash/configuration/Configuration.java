@@ -388,6 +388,11 @@ public final class Configuration {
     @ConfigurationName("gui.fontPreviewWindow.posY")
     public static ConfigurationItem<Integer> guiFontPreviewPosY = null;
 
+    @ConfigurationDefaultString("\r\n")
+    @ConfigurationName("formatting.newLineChars")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<String> newLineChars = null;
+
     @ConfigurationDefaultInt(3)
     @ConfigurationName("formatting.indent.size")
     @ConfigurationCategory("format")
@@ -401,6 +406,106 @@ public final class Configuration {
     @ConfigurationDefaultBoolean(true)
     @ConfigurationCategory("format")
     public static ConfigurationItem<Boolean> beginBlockOnNewLine = null;
+
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.brackets.spaceBefore.arrayAccess")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceBeforeArrayAccessBrackets = null;
+
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.parentheses.spaceBefore.methodCall")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceBeforeParenthesesMethodCallParentheses = null;
+
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.parentheses.spaceBefore.methodCallEmpty")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceBeforeParenthesesMethodCallEmptyParentheses = null;
+
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.parentheses.spaceBefore.methodDeclaration")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceBeforeParenthesesMethodDeclarationParentheses = null;
+
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.parentheses.spaceBefore.methodDeclarationEmpty")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceBeforeParenthesesMethodDeclarationEmptyParentheses = null;
+
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.parentheses.spaceBefore.if")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceBeforeParenthesesIfParentheses = null;
+
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.parentheses.spaceBefore.with")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceBeforeParenthesesWithParentheses = null;
+
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.parentheses.spaceBefore.while")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceBeforeParenthesesWhileParentheses = null;
+
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.parentheses.spaceBefore.catch")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceBeforeParenthesesCatchParentheses = null;
+
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.parentheses.spaceBefore.switch")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceBeforeParenthesesSwitchParentheses = null;
+
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.parentheses.spaceBefore.for")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceBeforeParenthesesForParentheses = null;
+
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.parentheses.spaceBefore.forEach")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceBeforeParenthesesForEachParentheses = null;
+
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.operators.spaceAround.assignment")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceAroundOperatorsAssignmentOperators = null;
+
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.operators.spaceAround.logical")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceAroundOperatorsLogicalOperators = null;
+
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.operators.spaceAround.equality")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceAroundOperatorsEqualityOperators = null;
+
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.operators.spaceAround.relational")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceAroundOperatorsRelationalOperator = null;
+
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.operators.spaceAround.bitwise")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceAroundOperatorsBitwiseOperator = null;
+
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.operators.spaceAround.additive")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceAroundOperatorsAdditiveOperator = null;
+
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.operators.spaceAround.multiplicative")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceAroundOperatorsMultiplicativeOperator = null;
+
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.operators.spaceAround.shift")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceAroundOperatorsShiftOperator = null;
 
     @ConfigurationDefaultInt(1000 * 60 * 60 * 24)
     @ConfigurationCategory("update")
@@ -1570,12 +1675,33 @@ public final class Configuration {
      */
     public static CodeFormatting getCodeFormatting() {
         CodeFormatting ret = new CodeFormatting();
+        ret.newLineChars = newLineChars.get();
         String indentString = "";
         for (int i = 0; i < indentSize.get(); i++) {
             indentString += indentUseTabs.get() ? "\t" : " ";
         }
         ret.indentString = indentString;
         ret.beginBlockOnNewLine = beginBlockOnNewLine.get();
+        ret.spaceBeforeArrayAccessBrackets = spaceBeforeArrayAccessBrackets.get();
+        ret.spaceBeforeParenthesesMethodCallParentheses = spaceBeforeParenthesesMethodCallParentheses.get();
+        ret.spaceBeforeParenthesesMethodCallEmptyParentheses = spaceBeforeParenthesesMethodCallEmptyParentheses.get();
+        ret.spaceBeforeParenthesesMethodDeclarationParentheses = spaceBeforeParenthesesMethodDeclarationParentheses.get();
+        ret.spaceBeforeParenthesesMethodDeclarationEmptyParentheses = spaceBeforeParenthesesMethodDeclarationEmptyParentheses.get();
+        ret.spaceBeforeParenthesesIfParentheses = spaceBeforeParenthesesIfParentheses.get();
+        ret.spaceBeforeParenthesesWithParentheses = spaceBeforeParenthesesWithParentheses.get();
+        ret.spaceBeforeParenthesesWhileParentheses = spaceBeforeParenthesesWhileParentheses.get();
+        ret.spaceBeforeParenthesesCatchParentheses = spaceBeforeParenthesesCatchParentheses.get();
+        ret.spaceBeforeParenthesesSwitchParentheses = spaceBeforeParenthesesSwitchParentheses.get();
+        ret.spaceBeforeParenthesesForParentheses = spaceBeforeParenthesesForParentheses.get();
+        ret.spaceBeforeParenthesesForEachParentheses = spaceBeforeParenthesesForEachParentheses.get();
+        ret.spaceAroundOperatorsAssignmentOperators = spaceAroundOperatorsAssignmentOperators.get();
+        ret.spaceAroundOperatorsLogicalOperators = spaceAroundOperatorsLogicalOperators.get();
+        ret.spaceAroundOperatorsEqualityOperators = spaceAroundOperatorsEqualityOperators.get();
+        ret.spaceAroundOperatorsRelationalOperator = spaceAroundOperatorsRelationalOperator.get();
+        ret.spaceAroundOperatorsBitwiseOperator = spaceAroundOperatorsBitwiseOperator.get();
+        ret.spaceAroundOperatorsAdditiveOperator = spaceAroundOperatorsAdditiveOperator.get();
+        ret.spaceAroundOperatorsMultiplicativeOperator = spaceAroundOperatorsMultiplicativeOperator.get();
+        ret.spaceAroundOperatorsShiftOperator = spaceAroundOperatorsShiftOperator.get();
         return ret;
     }
 
