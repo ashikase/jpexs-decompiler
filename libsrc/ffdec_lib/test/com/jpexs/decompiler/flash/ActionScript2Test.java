@@ -248,7 +248,7 @@ public class ActionScript2Test extends ActionScript2TestBase {
 
     @Test
     public void frame33_functionTest() {
-        compareSrc(33, "function hello(what, second)\r\n"
+        compareSrc(33, "function hello(what,second)\r\n"
                 + "{\r\n"
                 + "trace(\"hello \" + what + \"! \" + second);\r\n"
                 + "}\r\n"
@@ -730,7 +730,7 @@ public class ActionScript2Test extends ActionScript2TestBase {
                 + "a = escape(\"how\");\r\n"
                 + "var f = a;\r\n"
                 + "fscommand(\"alert(\\\"hi\\\");\");\r\n"
-                + "a = getProperty(mc, _alpha);\r\n"
+                + "a = getProperty(mc,_alpha);\r\n"
                 + "a = getTimer();\r\n"
                 + "getURL(\"http://localhost/\",\"wnd\",\"POST\");\r\n"
                 + "a = getVersion();\r\n"
@@ -770,7 +770,7 @@ public class ActionScript2Test extends ActionScript2TestBase {
                 + "a = random(10);\r\n"
                 + "removeMovieClip(mc);\r\n"
                 + "setInterval(tst,5,f);\r\n"
-                + "setProperty(mc, _alpha, 25);\r\n"
+                + "setProperty(mc,_alpha,25);\r\n"
                 + "setTimeout(ts,5,f);\r\n"
                 + "showRedrawRegions(false,0);\r\n"
                 + "startDrag(mc,1,5,5,6,6);\r\n"
@@ -890,7 +890,7 @@ public class ActionScript2Test extends ActionScript2TestBase {
     public void frame64_functionInnerParametersTest() {
         compareSrc(64, "function outfunc()\r\n"
                 + "{\r\n"
-                + "var _loc2_ = function(a, x)\r\n"
+                + "var _loc2_ = function(a,x)\r\n"
                 + "{\r\n"
                 + "var _loc3_ = a + 3 + x;\r\n"
                 + "var _loc2_ = function()\r\n"
@@ -2024,9 +2024,9 @@ public class ActionScript2Test extends ActionScript2TestBase {
     @Test
     public void frame74_setPropertyTest() {
         compareSrc(74, "trace(\"setPropertyTest\");\r\n"
-                + "setProperty(\"_root\", _rotation, 45);\r\n"
+                + "setProperty(\"_root\",_rotation,45);\r\n"
                 + "_root._rotation = 60;\r\n"
-                + "trace(getProperty(\"_root\", _rotation));\r\n"
+                + "trace(getProperty(\"_root\",_rotation));\r\n"
                 + "set(\"_root._rotation\",60);\r\n"
                 + "trace(undefined);\r\n"
         );

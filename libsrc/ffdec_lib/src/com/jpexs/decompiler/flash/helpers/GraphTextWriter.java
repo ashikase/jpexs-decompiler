@@ -483,6 +483,17 @@ public abstract class GraphTextWriter {
     }
 
     /**
+     * Space after comma separating call parameters.
+     * @return GraphTextWriter
+     */
+    public GraphTextWriter spaceAfterCallParameterComma() {
+        if (formatting.spaceAfterCommasMethodCallParameterComma) {
+            space();
+        }
+        return this;
+    }
+
+    /**
      * Adds current method data.
      * @param data Highlight data
      * @return GraphTextWriter

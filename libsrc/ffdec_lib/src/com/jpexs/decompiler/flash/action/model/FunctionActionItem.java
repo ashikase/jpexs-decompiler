@@ -280,7 +280,8 @@ public class FunctionActionItem extends ActionItem implements BranchStackResista
 
         for (int p = 0; p < paramNames.size(); p++) {
             if (p > 0) {
-                writer.append(", ");
+                writer.append(",");
+                writer.spaceAfterCallParameterComma();
             }
             String pname = paramNames.get(p);
             if (pname == null || pname.isEmpty()) {

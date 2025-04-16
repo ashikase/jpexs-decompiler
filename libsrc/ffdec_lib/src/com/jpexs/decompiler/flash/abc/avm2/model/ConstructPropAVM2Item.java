@@ -124,6 +124,7 @@ public class ConstructPropAVM2Item extends AVM2Item {
         for (int a = 0; a < args.size(); a++) {
             if (a > 0) {
                 writer.allowWrapHere().append(",");
+                writer.spaceAfterCallParameterComma();
             }
             args.get(a).toString(writer, localData);
         }

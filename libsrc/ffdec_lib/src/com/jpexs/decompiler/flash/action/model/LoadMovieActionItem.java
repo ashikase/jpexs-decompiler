@@ -89,6 +89,7 @@ public class LoadMovieActionItem extends ActionItem {
         writer.append("(");
         urlString.toString(writer, localData);
         writer.append(",");
+        writer.spaceAfterCallParameterComma();
         targetString.toString(writer, localData);
         return writer.append(methodStr).append(")");
     }

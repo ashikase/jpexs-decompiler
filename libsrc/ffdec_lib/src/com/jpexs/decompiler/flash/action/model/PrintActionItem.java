@@ -76,6 +76,7 @@ public class PrintActionItem extends ActionItem {
         writer.append("(");
         target.toString(writer, localData);
         writer.append(",");
+        writer.spaceAfterCallParameterComma();
         boundingBox.toString(writer, localData);
         return writer.append(")");
     }

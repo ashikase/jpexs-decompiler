@@ -113,6 +113,7 @@ public class NewMethodActionItem extends ActionItem {
         for (int t = 0; t < arguments.size(); t++) {
             if (t > 0) {
                 writer.append(",");
+                writer.spaceAfterCallParameterComma();
             }
             arguments.get(t).toString(writer, localData);
         }

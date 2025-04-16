@@ -86,6 +86,7 @@ public class NextValueAVM2Item extends AVM2Item {
         writer.append("(");
         index.toString(writer, localData);
         writer.append(",");
+        writer.spaceAfterCallParameterComma();
         obj.toString(writer, localData);
         return writer.append(")");
     }

@@ -89,7 +89,8 @@ public class GetPropertyActionItem extends ActionItem {
         writer.spaceBeforeCallParenthesis(2);
         writer.append("(");
         target.toString(writer, localData);
-        writer.append(", ");
+        writer.append(",");
+        writer.spaceAfterCallParameterComma();
         writer.append(Action.propertyNames[propertyIndex]);
         writer.append(")");
         return writer;

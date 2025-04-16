@@ -77,6 +77,7 @@ public class PrintNumActionItem extends ActionItem {
         writer.append("(");
         num.toString(writer, localData);
         writer.append(",");
+        writer.spaceAfterCallParameterComma();
         boundingBox.toString(writer, localData);
         return writer.append(")");
     }

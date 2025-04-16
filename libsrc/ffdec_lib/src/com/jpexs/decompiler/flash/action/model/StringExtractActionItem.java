@@ -70,6 +70,7 @@ public class StringExtractActionItem extends ActionItem {
         writer.append(",");
         index.toString(writer, localData);
         writer.append(",");
+        writer.spaceAfterCallParameterComma();
         count.toString(writer, localData);
         return writer.append(")");
     }

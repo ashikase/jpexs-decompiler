@@ -145,6 +145,7 @@ public class SetVariableActionItem extends ActionItem implements SetTypeActionIt
             writer.append("(");
             name.toString(writer, localData);
             writer.append(",");
+            writer.spaceAfterCallParameterComma();
             value.toString(writer, localData);
             return writer.append(")");
         }

@@ -84,8 +84,10 @@ public class CloneSpriteActionItem extends ActionItem {
         writer.append("(");
         target.toString(writer, localData);
         writer.append(",");
+        writer.spaceAfterCallParameterComma();
         source.toString(writer, localData);
         writer.append(",");
+        writer.spaceAfterCallParameterComma();
         depth.toString(writer, localData);
         return writer.append(")");
     }

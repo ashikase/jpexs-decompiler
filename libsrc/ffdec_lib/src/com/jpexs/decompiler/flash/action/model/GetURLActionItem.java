@@ -54,7 +54,9 @@ public class GetURLActionItem extends ActionItem {
         writer.append(Helper.escapeActionScriptString(urlString));
         writer.append("\"");
         if (!targetString.isEmpty()) {
-            writer.append(", \"");
+            writer.append(",");
+            writer.spaceAfterCallParameterComma();
+            writer.append("\"");
             writer.append(Helper.escapeActionScriptString(targetString));
             writer.append("\"");
         }

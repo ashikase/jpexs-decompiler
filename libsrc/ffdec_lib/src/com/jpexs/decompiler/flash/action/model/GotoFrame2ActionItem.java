@@ -95,7 +95,8 @@ public class GotoFrame2ActionItem extends ActionItem {
         writer.spaceBeforeCallParenthesis(1);
         writer.append("(");
         if (sceneBiasFlag) {
-            writer.append(sceneBias + ", ");
+            writer.append(sceneBias + ",");
+            writer.spaceAfterCallParameterComma();
         }
         frame.toString(writer, localData);
 

@@ -90,6 +90,7 @@ public class LoadMovieNumActionItem extends ActionItem {
         writer.append("(");
         urlString.toString(writer, localData);
         writer.append(",");
+        writer.spaceAfterCallParameterComma();
         num.toString(writer, localData);
         return writer.append(methodStr).append(")");
     }

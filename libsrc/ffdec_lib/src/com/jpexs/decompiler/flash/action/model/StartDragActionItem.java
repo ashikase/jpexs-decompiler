@@ -112,15 +112,20 @@ public class StartDragActionItem extends ActionItem {
         writer.append("(");
         target.toString(writer, localData);
         writer.append(",");
+        writer.spaceAfterCallParameterComma();
         lockCenter.toString(writer, localData);
         if (hasConstrains) {
             writer.append(",");
+            writer.spaceAfterCallParameterComma();
             x1.toString(writer, localData);
             writer.append(",");
+            writer.spaceAfterCallParameterComma();
             y1.toString(writer, localData);
             writer.append(",");
+            writer.spaceAfterCallParameterComma();
             x2.toString(writer, localData);
             writer.append(",");
+            writer.spaceAfterCallParameterComma();
             y2.toString(writer, localData);
         }
         return writer.append(")");

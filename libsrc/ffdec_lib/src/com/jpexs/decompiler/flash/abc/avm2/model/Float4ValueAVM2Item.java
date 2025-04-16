@@ -67,16 +67,19 @@ public class Float4ValueAVM2Item extends NumberValueAVM2Item {
             writer.append("f");
         } 
         writer.append(",");
+        writer.spaceAfterCallParameterComma();
         writer.append(EcmaScript.toString(value.values[1]));
         if (Float.isFinite(value.values[1])) {
             writer.append("f");
         }         
         writer.append(",");
+        writer.spaceAfterCallParameterComma();
         writer.append(EcmaScript.toString(value.values[2]));
         if (Float.isFinite(value.values[2])) {
             writer.append("f");
         }         
         writer.append(",");
+        writer.spaceAfterCallParameterComma();
         writer.append(EcmaScript.toString(value.values[3]));
         if (Float.isFinite(value.values[3])) {
             writer.append("f");

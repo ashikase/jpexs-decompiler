@@ -507,6 +507,11 @@ public final class Configuration {
     @ConfigurationCategory("format")
     public static ConfigurationItem<Boolean> spaceAroundOperatorsShiftOperator = null;
 
+    @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.commas.spaceAfter.methodCallParameter")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceAfterCommasMethodCallParameterComma = null;
+
     @ConfigurationDefaultInt(1000 * 60 * 60 * 24)
     @ConfigurationCategory("update")
     @ConfigurationName("check.updates.delay")
@@ -1702,6 +1707,7 @@ public final class Configuration {
         ret.spaceAroundOperatorsAdditiveOperator = spaceAroundOperatorsAdditiveOperator.get();
         ret.spaceAroundOperatorsMultiplicativeOperator = spaceAroundOperatorsMultiplicativeOperator.get();
         ret.spaceAroundOperatorsShiftOperator = spaceAroundOperatorsShiftOperator.get();
+        ret.spaceAfterCommasMethodCallParameterComma = spaceAfterCommasMethodCallParameterComma.get();
         return ret;
     }
 

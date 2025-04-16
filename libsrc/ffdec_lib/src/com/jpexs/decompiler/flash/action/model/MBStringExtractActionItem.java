@@ -76,8 +76,10 @@ public class MBStringExtractActionItem extends ActionItem {
         writer.append("(");
         value.toString(writer, localData);
         writer.append(",");
+        writer.spaceAfterCallParameterComma();
         index.toString(writer, localData);
         writer.append(",");
+        writer.spaceAfterCallParameterComma();
         count.toString(writer, localData);
         return writer.append(")");
     }

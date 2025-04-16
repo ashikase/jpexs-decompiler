@@ -71,6 +71,7 @@ public class FSCommandActionItem extends ActionItem {
         command.appendTry(writer, localData);
         if (parameter != null) {
             writer.append(",");
+            writer.spaceAfterCallParameterComma();
             parameter.appendTry(writer, localData);
         }
         return writer.append(")");
