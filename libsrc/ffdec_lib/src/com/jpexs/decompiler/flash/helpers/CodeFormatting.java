@@ -160,6 +160,11 @@ public class CodeFormatting {
     public boolean spaceAfterColonsNameValuePairColon = false;
 
     /**
+     * Space around colon preceeding new (anonymous) function return type.
+     */
+    public boolean spaceAroundColonsNewFunctionReturnTypeColon = false;
+
+    /**
      * Space after commas separating parameters in method call.
      */
     public boolean spaceAfterCommasMethodCallParameterComma = false;

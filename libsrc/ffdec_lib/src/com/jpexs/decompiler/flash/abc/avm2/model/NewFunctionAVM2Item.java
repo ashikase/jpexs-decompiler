@@ -117,7 +117,14 @@ public class NewFunctionAVM2Item extends AVM2Item {
         writer.append((!functionName.isEmpty() ? " " + functionName : ""));
         writer.appendNoHilight("(");
         abc.method_info.get(methodIndex).getParamStr(writer, abc.constants, body, abc, localData.fullyQualifiedNames, localData.usedDeobfuscations);
-        writer.appendNoHilight("):");
+        writer.appendNoHilight(")");
+        if (writer.getFormatting().spaceAroundColonsNewFunctionReturnTypeColon) {
+            writer.appendNoHilight(" ");
+        }
+        writer.appendNoHilight(":");
+        if (writer.getFormatting().spaceAroundColonsNewFunctionReturnTypeColon) {
+            writer.appendNoHilight(" ");
+        }
         if (Configuration.showMethodBodyId.get()) {
             writer.appendNoHilight("// method body index: ");
             writer.appendNoHilight(abc.findBodyIndex(methodIndex));
