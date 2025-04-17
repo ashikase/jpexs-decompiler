@@ -68,6 +68,9 @@ public class NameValuePair extends AVM2Item {
             writer.append(")");
         }
         writer.append(":");
+        if (writer.getFormatting().spaceAfterColonsNameValuePairColon) {
+            writer.append(" ");
+        }
         if (value instanceof TernarOpItem) { //Ternar operator contains ":"
             writer.append("(");
             value.toString(writer, localData);

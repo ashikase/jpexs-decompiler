@@ -513,6 +513,11 @@ public final class Configuration {
     public static ConfigurationItem<Boolean> spaceAfterColonsDeclarationColon = null;
 
     @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.colons.spaceAfter.nameValuePair")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceAfterColonsNameValuePairColon = null;
+
+    @ConfigurationDefaultBoolean(false)
     @ConfigurationName("formatting.commas.spaceAfter.methodCallParameter")
     @ConfigurationCategory("format")
     public static ConfigurationItem<Boolean> spaceAfterCommasMethodCallParameterComma = null;
@@ -1713,6 +1718,7 @@ public final class Configuration {
         ret.spaceAroundOperatorsMultiplicativeOperator = spaceAroundOperatorsMultiplicativeOperator.get();
         ret.spaceAroundOperatorsShiftOperator = spaceAroundOperatorsShiftOperator.get();
         ret.spaceAfterColonsDeclarationColon = spaceAfterColonsDeclarationColon.get();
+        ret.spaceAfterColonsNameValuePairColon = spaceAfterColonsNameValuePairColon.get();
         ret.spaceAfterCommasMethodCallParameterComma = spaceAfterCommasMethodCallParameterComma.get();
         return ret;
     }

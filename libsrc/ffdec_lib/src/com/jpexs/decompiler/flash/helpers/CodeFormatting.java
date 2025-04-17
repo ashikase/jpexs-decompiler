@@ -155,6 +155,11 @@ public class CodeFormatting {
     public boolean spaceAfterColonsDeclarationColon = false;
 
     /**
+     * Space after colon separating name and value pairs.
+     */
+    public boolean spaceAfterColonsNameValuePairColon = false;
+
+    /**
      * Space after commas separating parameters in method call.
      */
     public boolean spaceAfterCommasMethodCallParameterComma = false;
