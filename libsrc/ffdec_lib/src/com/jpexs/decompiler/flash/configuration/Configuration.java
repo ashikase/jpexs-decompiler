@@ -523,6 +523,11 @@ public final class Configuration {
     public static ConfigurationItem<Boolean> spaceAroundColonsNewFunctionReturnTypeColon = null;
 
     @ConfigurationDefaultBoolean(false)
+    @ConfigurationName("formatting.commas.spaceAfter.arrayItem")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> spaceAfterCommasArrayItemComma = null;
+
+    @ConfigurationDefaultBoolean(false)
     @ConfigurationName("formatting.commas.spaceAfter.methodCallParameter")
     @ConfigurationCategory("format")
     public static ConfigurationItem<Boolean> spaceAfterCommasMethodCallParameterComma = null;
@@ -1725,6 +1730,7 @@ public final class Configuration {
         ret.spaceAfterColonsDeclarationColon = spaceAfterColonsDeclarationColon.get();
         ret.spaceAfterColonsNameValuePairColon = spaceAfterColonsNameValuePairColon.get();
         ret.spaceAroundColonsNewFunctionReturnTypeColon = spaceAroundColonsNewFunctionReturnTypeColon.get();
+        ret.spaceAfterCommasArrayItemComma = spaceAfterCommasArrayItemComma.get();
         ret.spaceAfterCommasMethodCallParameterComma = spaceAfterCommasMethodCallParameterComma.get();
         return ret;
     }

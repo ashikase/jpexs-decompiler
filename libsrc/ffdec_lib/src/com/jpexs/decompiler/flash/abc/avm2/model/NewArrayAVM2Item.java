@@ -68,6 +68,9 @@ public class NewArrayAVM2Item extends AVM2Item {
         for (int a = 0; a < values.size(); a++) {
             if (a > 0) {
                 writer.allowWrapHere().append(",");
+                if (writer.getFormatting().spaceAfterCommasArrayItemComma) {
+                    writer.append(" ");
+                }
             }
             values.get(a).toString(writer, localData);
         }

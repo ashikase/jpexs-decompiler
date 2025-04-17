@@ -165,6 +165,11 @@ public class CodeFormatting {
     public boolean spaceAroundColonsNewFunctionReturnTypeColon = false;
 
     /**
+     * Space after commas separating items in arrays.
+     */
+    public boolean spaceAfterCommasArrayItemComma = false;
+
+    /**
      * Space after commas separating parameters in method call.
      */
     public boolean spaceAfterCommasMethodCallParameterComma = false;

@@ -63,6 +63,9 @@ public class InitArrayActionItem extends ActionItem {
         for (int i = 0; i < values.size(); i++) {
             if (i > 0) {
                 writer.append(",");
+                if (writer.getFormatting().spaceAfterCommasArrayItemComma) {
+                    writer.append(" ");
+                }
             }
             values.get(i).toString(writer, localData);
         }
