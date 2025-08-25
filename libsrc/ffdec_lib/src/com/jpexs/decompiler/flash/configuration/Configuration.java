@@ -404,6 +404,11 @@ public final class Configuration {
     public static ConfigurationItem<Boolean> indentUseTabs = null;
 
     @ConfigurationDefaultBoolean(true)
+    @ConfigurationName("formatting.indent.emptyLine")
+    @ConfigurationCategory("format")
+    public static ConfigurationItem<Boolean> indentEmptyLine = null;
+
+    @ConfigurationDefaultBoolean(true)
     @ConfigurationCategory("format")
     public static ConfigurationItem<Boolean> beginBlockOnNewLine = null;
 
@@ -1706,6 +1711,7 @@ public final class Configuration {
             indentString += indentUseTabs.get() ? "\t" : " ";
         }
         ret.indentString = indentString;
+        ret.indentEmptyLine = indentEmptyLine.get();
         ret.beginBlockOnNewLine = beginBlockOnNewLine.get();
         ret.spaceBeforeArrayAccessBrackets = spaceBeforeArrayAccessBrackets.get();
         ret.spaceBeforeParenthesesMethodCallParentheses = spaceBeforeParenthesesMethodCallParentheses.get();

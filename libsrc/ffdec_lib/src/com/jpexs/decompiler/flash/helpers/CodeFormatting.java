@@ -34,6 +34,11 @@ public class CodeFormatting {
     public String indentString = "   ";
 
     /**
+     * Indent empty line
+     */
+    public boolean indentEmptyLine = true;
+
+    /**
      * Begin block on new line
      */
     public boolean beginBlockOnNewLine = true;

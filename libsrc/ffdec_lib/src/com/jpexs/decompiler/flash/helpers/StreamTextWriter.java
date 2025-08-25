@@ -126,7 +126,9 @@ public class StreamTextWriter extends GraphTextWriter implements AutoCloseable {
     private void writeToOutputStream(String str) {
         if (newLine) {
             newLine = false;
-            appendIndent();
+            if (formatting.indentEmptyLine || !str.equals(formatting.newLineChars)) {
+                appendIndent();
+            }
         }
         try {
             writer.write(str);
