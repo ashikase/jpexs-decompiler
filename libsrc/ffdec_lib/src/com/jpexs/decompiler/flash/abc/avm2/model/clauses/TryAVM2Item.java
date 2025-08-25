@@ -140,7 +140,11 @@ public class TryAVM2Item extends AVM2Item implements Block {
         writer.append("try");
         appendBlock(null, writer, localData, tryCommands);
         for (int e = 0; e < catchExceptions.size(); e++) {
-            writer.newLine();
+            if (writer.getFormatting().beginBlockOnNewLine) {
+                writer.newLine();
+            } else {
+                writer.append(" ");
+            }
             writer.append("catch");
             if (writer.getFormatting().spaceBeforeParenthesesCatchParentheses) {
                 writer.append(" ");
@@ -167,7 +171,11 @@ public class TryAVM2Item extends AVM2Item implements Block {
             appendBlock(null, writer, localData, commands);
         }
         if (catchExceptions.isEmpty() || finallyCommands.size() > 0) {
-            writer.newLine();
+            if (writer.getFormatting().beginBlockOnNewLine) {
+                writer.newLine();
+            } else {
+                writer.append(" ");
+            }
             writer.append("finally");
             appendBlock(null, writer, localData, finallyCommands);
         }
